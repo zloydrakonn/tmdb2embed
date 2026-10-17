@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vnhpE50NSHk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zloydrakon\\Downloads\\code\\tmdb2embed\\tmdb2embed.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zloydrakon\\.nuget\\packages\\system.commandline\\2.0.13\\system.commandline.2.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

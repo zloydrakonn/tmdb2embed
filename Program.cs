@@ -4,9 +4,9 @@ using Tmdb2Embed.Services;
 
 var tmdbId = new Argument<int>("tmdbId");
 tmdbId.Description = "The TMDB ID of the TV show/movie";
-var season = new Argument<string>("season");
+var season = new Argument<int>("season");
 season.Description = "Season number";
-var episode = new Argument<string>("episode");
+var episode = new Argument<int>("episode");
 episode.Description = "Episode number";
 
 var file = new Option<FileInfo>("--file", "-f");

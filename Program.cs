@@ -31,18 +31,18 @@ movieCommand.SetAction(r =>
     int id = r.GetValue(tmdbId);
 
     FileInfo pathFile = r.GetValue(file)!;
-    try
+    if (pathFile.Exists)
     {
-        var embedList = MbdParser.GetListOfEmbeds(pathFile);
+            var embedList = MbdParser.GetListOfEmbeds(pathFile);
         foreach (var template in embedList)
         {
             Console.WriteLine(template.MovieTemplate);
         }
     }
-    catch (FileNotFoundException e)
+    else
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine($"Error: File not found: {pathFile}");
+        Console.Error.WriteLine($"Error: File not found: {pathFile}");
         Console.ResetColor();
     }
 
@@ -52,22 +52,22 @@ movieCommand.SetAction(r =>
 tvCommand.SetAction(r =>
 {
     int id = r.GetValue(tmdbId);
-    string tvSeason = r.GetValue(season)!;
-    string tvEpisode = r.GetValue(episode)!;
+    int tvSeason = r.GetValue(season)!;
+    int tvEpisode = r.GetValue(episode)!;
     FileInfo pathFile = r.GetValue(file)!;
-    
-    try
+
+    if (pathFile.Exists)
     {
-        var embedList = MbdParser.GetListOfEmbeds(pathFile);
+            var embedList = MbdParser.GetListOfEmbeds(pathFile);
         foreach (var template in embedList)
         {
             Console.WriteLine(template.TvTemplate);
         }
     }
-    catch (FileNotFoundException e)
+    else
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine($"Error: File not found: {pathFile}");
+        Console.Error.WriteLine($"Error: File not found: {pathFile}");
         Console.ResetColor();
     }
 });

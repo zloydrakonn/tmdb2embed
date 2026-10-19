@@ -38,12 +38,14 @@ movieCommand.SetAction(r =>
         {
             Console.WriteLine(template.MovieTemplate);
         }
+        return 0;
     }
     else
     {
         Console.ForegroundColor = ConsoleColor.Red;
         Console.Error.WriteLine($"Error: File not found: {pathFile}");
         Console.ResetColor();
+        return 1;
     }
 
     
@@ -63,12 +65,14 @@ tvCommand.SetAction(r =>
         {
             Console.WriteLine(template.TvTemplate);
         }
+        return 0;
     }
     else
     {
         Console.ForegroundColor = ConsoleColor.Red;
         Console.Error.WriteLine($"Error: File not found: {pathFile}");
         Console.ResetColor();
+        return 1;
     }
 });
 

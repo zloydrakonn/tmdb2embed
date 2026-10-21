@@ -42,10 +42,7 @@ movieCommand.SetAction(r =>
     }
     else
     {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Error.WriteLine($"Error: File not found: {pathFile}");
-        Console.ResetColor();
-        return 1;
+        return ErrorHandler.FileNotFound(pathFile);
     }
 
     
@@ -69,10 +66,7 @@ tvCommand.SetAction(r =>
     }
     else
     {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Error.WriteLine($"Error: File not found: {pathFile}");
-        Console.ResetColor();
-        return 1;
+        return ErrorHandler.FileNotFound(pathFile);
     }
 });
 

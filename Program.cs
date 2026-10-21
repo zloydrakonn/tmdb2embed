@@ -33,10 +33,10 @@ movieCommand.SetAction(r =>
     FileInfo pathFile = r.GetValue(file)!;
     if (pathFile.Exists)
     {
-            var embedList = MbdParser.GetListOfEmbeds(pathFile);
-        foreach (var template in embedList)
+            var embedList = EmbedBuilder.BuildAllMovies(MbdParser.GetListOfEmbeds(pathFile), id);
+        foreach (var embed in embedList)
         {
-            Console.WriteLine(template.MovieTemplate);
+            Console.WriteLine(embed);
         }
         return 0;
     }
@@ -60,10 +60,10 @@ tvCommand.SetAction(r =>
 
     if (pathFile.Exists)
     {
-            var embedList = MbdParser.GetListOfEmbeds(pathFile);
-        foreach (var template in embedList)
+            var embedList =  EmbedBuilder.BuildAllTvs(MbdParser.GetListOfEmbeds(pathFile), id, tvSeason, tvEpisode);
+        foreach (var embed in embedList)
         {
-            Console.WriteLine(template.TvTemplate);
+            Console.WriteLine(embed);
         }
         return 0;
     }
